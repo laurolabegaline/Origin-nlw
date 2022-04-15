@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DA Augustinho - Make up</title>
+    <!--Swiper-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <!--Icones-->
     <link rel="stylesheet" href="assets/fonts/style.css" />
 
@@ -144,69 +149,78 @@
       <!--TESTIMONIALS-->
 
       <section class="section" id="testimonials">
-        <div class="container grid">
+        <div class="container">
           <header>
             <h2 class="title">Depoimentos de quem já passou por aqui</h2>
           </header>
-          <div class="testimonials">
-            <blockquote>
-              <p>
-                <span>&ldquo;</span>Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Maxime voluptatem vero perspiciatis facere
-                iusto nulla expedita labore praesentium eius distinctio
-                assumenda a ipsa, vel nisi iste recusandae est repudiandae
-                repellendus!
-              </p>
-              <cite
-                ><img
-                  src="https://randomuser.me/api/portraits/women/19.jpg"
-                  alt="Foto de wanessa Souza"
-                />
-                Wanessa Souza</cite
-              >
-            </blockquote>
-          </div>
-          <div class="testimonials">
-            <blockquote>
-              <p>
-                <span>&ldquo;</span>Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Maxime voluptatem vero perspiciatis facere
-                iusto nulla expedita labore praesentium eius distinctio
-                assumenda a ipsa, vel nisi iste recusandae est repudiandae
-                repellendus!
-              </p>
-              <cite
-                ><img
-                  src="https://randomuser.me/api/portraits/women/57.jpg"
-                  alt="Foto de Franciele"
-                />
-                Franciele Venega</cite
-              >
-            </blockquote>
-          </div>
-          <div class="testimonials">
-            <blockquote>
-              <p>
-                <span>&ldquo;</span>Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Maxime voluptatem vero perspiciatis facere
-                iusto nulla expedita labore praesentium eius distinctio
-                assumenda a ipsa, vel nisi iste recusandae est repudiandae
-                repellendus!
-              </p>
-              <cite
-                ><img
-                  src="https://randomuser.me/api/portraits/women/72.jpg"
-                  alt="Foto da Waleska"
-                />
-                Waleska Fabris</cite
-              >
-            </blockquote>
+          <div class="testimonials swiper">
+            <div class="swiper-wrapper">
+              <div class="testimonials swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Maxime voluptatem vero perspiciatis facere
+                    iusto nulla expedita labore praesentium eius distinctio
+                    assumenda a ipsa, vel nisi iste recusandae est repudiandae
+                    repellendus!
+                  </p>
+                  <cite
+                    ><img
+                      src="https://randomuser.me/api/portraits/women/19.jpg"
+                      alt="Foto de wanessa Souza"
+                    />
+                    Wanessa Souza</cite
+                  >
+                </blockquote>
+              </div>
+              <div class="testimonials swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Maxime voluptatem vero perspiciatis facere
+                    iusto nulla expedita labore praesentium eius distinctio
+                    assumenda a ipsa, vel nisi iste recusandae est repudiandae
+                    repellendus!
+                  </p>
+                  <cite
+                    ><img
+                      src="https://randomuser.me/api/portraits/women/57.jpg"
+                      alt="Foto de Franciele"
+                    />
+                    Franciele Venega</cite
+                  >
+                </blockquote>
+              </div>
+              <div class="testimonials swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Maxime voluptatem vero perspiciatis facere
+                    iusto nulla expedita labore praesentium eius distinctio
+                    assumenda a ipsa, vel nisi iste recusandae est repudiandae
+                    repellendus!
+                  </p>
+                  <cite
+                    ><img
+                      src="https://randomuser.me/api/portraits/women/72.jpg"
+                      alt="Foto da Waleska"
+                    />
+                    Waleska Fabris</cite
+                  >
+                </blockquote>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
+
       <!--CONTATC-->
     </main>
     <footer></footer>
+    <!--Swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--My scripts-->
     <script src="main.js"></script>
   </body>
 </html>

@@ -361,8 +361,16 @@ nav.show .icon-close{
 /* ===  testimonials ===================== */
 
 #testimonials {
-
     background: white;
+}
+#testimonials .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+#testimonials header {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0;
 }
 #testimonials blockquote {
     padding: 2rem;
@@ -390,13 +398,23 @@ nav.show .icon-close{
     align-items: center;
     font-style: normal;
 }
-
-
 #testimonials cite img {
     height: 2rem;
     width: 2rem;
     object-fit: cover; /* IMAGEM COBRE  */
     clip-path: circle(); 
     margin-right: 0.5rem;
-    
+}
+
+/* Swiper */
+.swiper-slide {
+    height: auto;
+    padding: 4rem 1rem;
+}
+.swiper-pagination-bullet {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+.swiper-pagination-bullet-active {
+    background: var(--base-color);
 }
