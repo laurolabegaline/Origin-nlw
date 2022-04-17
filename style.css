@@ -35,6 +35,10 @@
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+  /* Fonts */
+
+  --title-font-size: 1.875rem;
 }
 
 
@@ -51,7 +55,7 @@ body{
 }
 
 .title  {
-    font: 700 1.875rem 'Poppins', sans-serif;
+    font: 700 var(--title-font-size) 'Poppins', sans-serif;
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -511,3 +515,19 @@ footer .social a:hover{
 }
 
 
+/* ======== RESPONSIVO =======*/
+
+/* extra large devices: 1200 > */
+/* large devices: 1023 > */
+@media () {
+
+}
+/* large devcies: 992 > */
+@media (min-width: 992px) {
+    :root{
+      --title-font-size: 2.2rem;  
+
+    }
+
+}
+/* medium devices: 767 */

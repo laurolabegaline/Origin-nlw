@@ -16,24 +16,7 @@ for (const link of links) {
     nav.classList.remove('show')
   })
 }
-
-/* mudar header da pagina*/
-
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
-
-window.addEventListener('scroll', function () {
-  if (this.window.scrollY >= navHeight) {
-    // maior que altura do header
-    header.classList.add('scroll')
-  } else {
-    // menor que altura do header
-    header.classList.remove('scroll')
-  }
-})
-
-/* Testimonials carousel slider swiper   */
-
+// Testimonials carousel slider swiper
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   pagination: {
@@ -43,7 +26,7 @@ const swiper = new Swiper('.swiper', {
   keyboard: true
 })
 
-/* ScrollrevealJS - Monstrar elementos   */
+// ScrollrevealJS - Monstrar elementos
 
 const scrollReveal = ScrollReveal({
   origin: 'top',
@@ -53,15 +36,33 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-  '#home .image, #home .text,  #about .image, #about .text,  #services header, #services .card,  #testimonials header, #testimonials .testimonials,  #contact .text, #contact .links, footer .brand, footer .social',
+  `#home .image, #home .text,
+  #about .image, #about .text,
+  #services header, #services .card, 
+  #testimonials header, #testimonials .testimonials,
+  #contact .text, #contact .links,
+  footer .brand, footer .social
+   `,
   { interval: 50 }
 )
 
 /* Back to top button */
+/* mudar header da pagina*/
 
-const backToTopButton = document.querySelector('.back-to-top') //Peguei o botão
-window.addEventListener('scroll', function () {
-  //adcionei uma função ao scroll
+function changeHeaderWhenScroll() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
+  if (this.window.scrollY >= navHeight) {
+    // maior que altura do header
+    header.classList.add('scroll')
+  } else {
+    // menor que altura do header
+    header.classList.remove('scroll')
+  }
+}
+
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top') //Peguei o botão
   if (window.scrollY >= 560) {
     // se o scroll for >= que 560px
     backToTopButton.classList.add('show') // então agrego a classLiss (show) ao lado do .back-to-top
@@ -69,4 +70,9 @@ window.addEventListener('scroll', function () {
     // se não for
     backToTopButton.classList.remove('show') // removo a classList (show) da class .back-to-top
   }
+}
+
+window.addEventListener('scroll', function () {
+  changeHeaderWhenScroll()
+  backToTop()
 })
