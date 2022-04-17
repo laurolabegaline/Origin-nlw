@@ -53,10 +53,20 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-  '#home .image, #home .text,  #about .image, #about .text,  #services header, #services .card,  #testimonials header, #testimonials .testimonials,  #contact .text, #contact .links',
-  { interval: 100 }
+  '#home .image, #home .text,  #about .image, #about .text,  #services header, #services .card,  #testimonials header, #testimonials .testimonials,  #contact .text, #contact .links, footer .brand, footer .social',
+  { interval: 50 }
 )
 
 /* Back to top button */
 
-const backToTopButton = document.querySelector('.back-to-top')
+const backToTopButton = document.querySelector('.back-to-top') //Peguei o botão
+window.addEventListener('scroll', function () {
+  //adcionei uma função ao scroll
+  if (window.scrollY >= 560) {
+    // se o scroll for >= que 560px
+    backToTopButton.classList.add('show') // então agrego a classLiss (show) ao lado do .back-to-top
+  } else {
+    // se não for
+    backToTopButton.classList.remove('show') // removo a classList (show) da class .back-to-top
+  }
+})
