@@ -10,20 +10,19 @@ for (const element of toggle) {
 }
 
 const links = document.querySelectorAll('nav ul li a')
-
 for (const link of links) {
   link.addEventListener('click', function () {
     nav.classList.remove('show')
   })
 }
 // Testimonials carousel slider swiper
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   pagination: {
     el: '.swiper-pagination'
-  },
-  mousewheel: true,
-  keyboard: true
+  }
+  // mousewheel: true,
+  // keyboard: true
 })
 
 // ScrollrevealJS - Monstrar elementos
@@ -31,8 +30,8 @@ const swiper = new Swiper('.swiper', {
 const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '30px',
-  duration: 700,
-  reset: true
+  duration: 700
+  //reset: true
 })
 
 scrollReveal.reveal(
@@ -43,7 +42,7 @@ scrollReveal.reveal(
   #contact .text, #contact .links,
   footer .brand, footer .social
    `,
-  { interval: 50 }
+  { interval: 100 }
 )
 
 /* Back to top button */
