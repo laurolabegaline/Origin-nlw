@@ -26,9 +26,9 @@ const swiper = new Swiper('.swiper-container', {
       slidesPerView: 2,
       setWrapperSize: true
     }
-  }
-  // mousewheel: true,
-  // keyboard: true
+  },
+  mousewheel: true,
+  keyboard: true
 })
 
 // ScrollrevealJS - Monstrar elementos
