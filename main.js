@@ -20,6 +20,12 @@ const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   pagination: {
     el: '.swiper-pagination'
+  },
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
   }
   // mousewheel: true,
   // keyboard: true
@@ -30,8 +36,8 @@ const swiper = new Swiper('.swiper-container', {
 const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '30px',
-  duration: 700
-  //reset: true
+  duration: 700,
+  reset: true
 })
 
 scrollReveal.reveal(
@@ -48,9 +54,10 @@ scrollReveal.reveal(
 /* Back to top button */
 /* mudar header da pagina*/
 
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
+
 function changeHeaderWhenScroll() {
-  const header = document.querySelector('#header')
-  const navHeight = header.offsetHeight
   if (this.window.scrollY >= navHeight) {
     // maior que altura do header
     header.classList.add('scroll')
@@ -60,8 +67,8 @@ function changeHeaderWhenScroll() {
   }
 }
 
+const backToTopButton = document.querySelector('.back-to-top') //Peguei o botão
 function backToTop() {
-  const backToTopButton = document.querySelector('.back-to-top') //Peguei o botão
   if (window.scrollY >= 560) {
     // se o scroll for >= que 560px
     backToTopButton.classList.add('show') // então agrego a classLiss (show) ao lado do .back-to-top
@@ -70,8 +77,34 @@ function backToTop() {
     backToTopButton.classList.remove('show') // removo a classList (show) da class .back-to-top
   }
 }
+/* Menu ativo  */
+
+const sections = document.querySelectorAll('main section[id]') //Pegar todas as seções que tem id
+function activeMenuAtCurrentSection() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+  for (const section of sections) {
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if (checkpointStart && checkpointEnd) {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+    } else {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+}
 
 window.addEventListener('scroll', function () {
   changeHeaderWhenScroll()
   backToTop()
+  activeMenuAtCurrentSection()
 })
